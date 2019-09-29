@@ -82,9 +82,9 @@ buffs_res = {
 class UndefinedError(Exception): pass
 
 if Mode == 'Online':
-    residence = '木屋 居民楼 钢结构房 平房 小型公寓 人才公寓 中式小楼'.split()
-    commercial = '便利店 服装店 五金店 菜市场 学校 图书城 民食斋 媒体之声'.split()
-    industry  = '木材厂 食品厂 造纸厂 水厂 电厂 钢铁厂 纺织厂 零件厂 企鹅机械'.split()
+    residence = '木屋 居民楼 钢结构房 平房 人才公寓'.split()
+    commercial = '便利店 服装店 五金店 菜市场 学校 图书城 民食斋'.split()
+    industry  = '木材厂 食品厂 造纸厂 电厂 钢铁厂 纺织厂 零件厂 企鹅机械'.split()
 elif Mode == 'Offline':
 # TODO:
     raise UndefinedError('离线收益等我有空再写，真的用得到吗')
@@ -92,11 +92,11 @@ elif Mode == 'Offline':
     commercial = '便利店 服装店 五金店 菜市场 学校 图书城 民食斋 媒体之声'.split()
     industry  = '木材厂 食品厂 造纸厂 水厂 电厂 钢铁厂 纺织厂 零件厂 企鹅机械'.split()
 
-OneStars = '媒体之声 企鹅机械'.split()
-TwoStars = '民食斋 人才公寓 零件厂 图书城 中式小楼'.split()
-TriStars = '纺织厂 钢铁厂'.split()
-QuaStars = '便利店 学校 服装店 小型公寓 水厂 菜市场 木屋 居民楼 电厂 五金店 食品厂 平房 木材厂'.split()
-PenStars = '造纸厂 钢结构房'.split()
+OneStars = '民食斋 零件厂 图书城 人才公寓 企鹅机械'.split()
+TwoStars = '电厂 纺织厂 食品厂 学校 钢铁厂'.split()
+TriStars = '服装店 五金店 平房 菜市场 造纸厂 便利店 居民楼 木屋 木材厂 钢结构房'.split()
+QuaStars = ''.split()
+PenStars = ''.split()
 
 star = dict()
 for item in OneStars:
@@ -117,22 +117,22 @@ startDict = {1:1, 2:2, 3:6, 4:24, 5:120}
 '''
 
 Policy = {
-            'Global':  1+2,
-            'Online':  1.5,
-            'Offline': 1,
-            'Residence': 3,
+            'Global':  0.25,
+            'Online':  0,
+            'Offline': 0,
+            'Residence': 0.3,
             'Commercial': 3,
-            'Industry': 6,
+            'Industry': 0,
             'JiaGuoZhiGuang': 0.3
         }
 
 Photos = {
-            'Global':  0.6,
-            'Online':  0.6,
-            'Offline': 0.9,
-            'Residence': 1.8,
-            'Commercial': 1.8,
-            'Industry': 0.6,
+            'Global':  0.2,
+            'Online':  0.3,
+            'Offline': 0.1,
+            'Residence': 1.5,
+            'Commercial': 0.6,
+            'Industry': 0,
         }
 
 
